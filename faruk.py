@@ -2,11 +2,11 @@ import discord
 import random
 import time
 
-# ayricaliklar (intents) değişkeni botun ayrıcalıklarını depolayacak
+# ayricaliklar (intents) deÃ°iÃ¾keni botun ayrÃ½calÃ½klarÃ½nÃ½ depolayacak
 intents = discord.Intents.default()
-# Mesajları okuma ayrıcalığını etkinleştirelim
+# MesajlarÃ½ okuma ayrÃ½calÃ½Ã°Ã½nÃ½ etkinleÃ¾tirelim
 intents.message_content = True
-# client (istemci) değişkeniyle bir bot oluşturalım ve ayrıcalıkları ona aktaralım
+# client (istemci) deÃ°iÃ¾keniyle bir bot oluÃ¾turalÃ½m ve ayrÃ½calÃ½klarÃ½ ona aktaralÃ½m
 while True:
     a  =   random.randint (1,2)
     time.sleep(0.1)
@@ -31,16 +31,16 @@ while True:
         if message.content.startswith('hello'):
             await message.channel.send("Hi!")
         elif message.content.startswith('bye'):
-            await message.channel.send("Keşke oyun gelsen")
+            await message.channel.send("KeÃ¾ke oyun gelsen")
         elif message.content.startswith('nasilsin'):
             await message.channel.send("iyiyim ya sen?")
         elif message.content.startswith('merhaba'):
             await message.channel.send("merhaba")
         elif message.content.startswith('sen bir botsun'):
-            await message.channel.send("bu doğru")
+            await message.channel.send("bu doÃ°ru")
         elif message.content.startswith('sifre'):
             await message.channel.send(gen_pass(8))
-        elif message.content.startswith('iyiyim teşekkürler'):
+        elif message.content.startswith('iyiyim teÃ¾ekkÃ¼rler'):
             await message.channel.send('rica ederim') 
         
         
