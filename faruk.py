@@ -44,7 +44,7 @@ async def hello(ctx):
     await ctx.send(f'Merhaba {bot.user}! Ben bir botum!')
 
 @bot.command()
-async def heh(ctx, count_heh = 5):
+async def heh(ctx, count_heh = 100):
     await ctx.send("he" * count_heh)
 
 
@@ -71,18 +71,18 @@ async def yazi(ctx):
         await ctx.send(f'Hayır {bot.user}! Bilemedin!')
 
 
+@bot.event
+async def on_member_join(member):
+        guild = member.guild
+        if guild.system_channel is not None:
+            to_send = f'Welcome {member.mention} to {guild.name}!'
+            await guild.system_channel.send(to_send)
 
 
 
 
 
+bot.run("TOKEN")
 
 
 
-
-@bot.command()
-async def sen_bir_botsun(ctx):
-    await ctx.send(f'Evet {bot.user}! Ben bir botum!')
-
-
-bot.run("Token")
