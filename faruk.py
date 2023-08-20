@@ -93,16 +93,36 @@ async def on_member_join(member):
 
 @bot.command()
 async def mem(ctx):
-    # Dosya adını bir değişkenden bu şekilde değiştirebilirsiniz!
-    img_name = random.choice(os.listdir('resimler'))
-    with open(f'resimler/{img_name}', 'rb') as f:
-        picture = discord.File(f)
-   # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
-    await ctx.send(file=picture)
+        a = random.randint(1,10)
+        # Dosya adını bir değişkenden bu şekilde değiştirebilirsiniz!
+        if a == 1 or a == 2:
+            with open('resimler/mem1.jpg', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        if a == 3 or a == 4 or a == 5:
+            with open('resimler\mem2.png', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        if a == 6:
+            with open('resimler\mem3.jpg', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        if a == 7 or a == 8:
+            with open('resimler\mem4.png', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        if a == 9 or a == 10:
+            with open('resimler\mem5.png', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
 
 
 
-bot.run("TOKEN")
 
 
-
+bot.run("MTEzNjY5ODgwOTQ3MzMwNjcyNA.GKbPAJ.T00Mp155o01l4ipSc8J7II-oGHH1b7JVt4MLUg")
