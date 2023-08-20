@@ -2,12 +2,25 @@ import discord
 from discord.ext import commands
 from bot_mantik import gen_pass
 import random
+import os
+print(os.listdir('resimler'))
+img_name = os.listdir('resimler')
+
+
+
+
 a = random.randint(1, 2)
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='$', intents=intents)
+
+
+@bot.command()
+async def link(ctx):
+    await ctx.send(f'https://www.youtube.com/watch?v=uZpMmP5EUEI')
+
 
 
 @bot.event
@@ -28,7 +41,7 @@ async def merhaba(ctx):
 
 @bot.command()
 async def sen_bir_botsun(ctx):
-    await ctx.send(f'Evet {bot.user}! Ben bir botum!')
+    await ctx.send(f'salak {bot.user}! sen bir botsun!')
 
 @bot.command()
 async def sifre(ctx):
@@ -78,7 +91,14 @@ async def on_member_join(member):
             to_send = f'Welcome {member.mention} to {guild.name}!'
             await guild.system_channel.send(to_send)
 
-
+@bot.command()
+async def mem(ctx):
+    # Dosya adını bir değişkenden bu şekilde değiştirebilirsiniz!
+    img_name = random.choice(os.listdir('resimler'))
+    with open(f'resimler/{img_name}', 'rb') as f:
+        picture = discord.File(f)
+   # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+    await ctx.send(file=picture)
 
 
 
